@@ -16,6 +16,13 @@ class HornedBeast extends React.Component {
             numberOfVotes: this.state.numberOfVotes + 1,
         })
     }
+    displayModal = () => {
+        this.props.displayModal({
+            title: this.props.title,
+            img_url:this.props.img_url,
+            description:this.props.description,
+        });
+      }
 
     render() {
         return (
@@ -24,7 +31,7 @@ class HornedBeast extends React.Component {
                 <img onClick={this.addVote} src={this.props.img_url} alt={this.props.title} title={this.props.title} />
                 <p>❤️: {this.state.numberOfVotes}</p>
                 <p> {this.props.description} </p> */}
-                <Card style={{ width: '30rem' }}>
+                <Card style={{ width: '30rem' }} onClick = {this.displayModal}>
                     <Card.Img onClick={this.addVote} variant="top" src={this.props.img_url} alt={this.props.title} />
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>

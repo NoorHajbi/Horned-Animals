@@ -1,37 +1,18 @@
-# Lab02: Time Estimate:
+# Lab03:
 
-## (1)
-- **Number and name of feature:** Feature #1: Display images
+## Pair Prpgramming  :
+- ***Navigator:** Ibraheem Abu Gharbieh*.
+- ***Diver:** Noor Hajbi.*
 
-- **Estimate of time needed to complete:** 1 hour
+### Feature #1: Display a Modal
 
-- **Start time:** 3
+- Estimate of time needed to complete: __4 hours__
 
-- **Finish time:** 3:25
+- Start time: __1:30 PM__
 
-- **Actual time needed to complete:** 25 min
+- Finish time: __5:00 PM__
 
-## (2)
-- **Number and name of feature:** Feature #2: Allow users to vote for their favorite beast
-
-- **Estimate of time needed to complete:** 1 hour
-
-- **Start time:** 6:50
-
-- **Finish time:** 7:10
-
-- **Actual time needed to complete:** 20 min
-
-## (3)
-- **Number and name of feature:** Feature 3: Bootstrap
-
-- **Estimate of time needed to complete:** 30 min
-
-- **Start time:** 9:16
-
-- **Finish time:** 9:33
-
-- **Actual time needed to complete:** 17 min
+- Actual time needed to complete: __3.5 hours__
 
 ---
 
