@@ -5,7 +5,10 @@ import Footer from './compenents/Footer';
 import hornsData from './compenents/hornsData.json'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SelectedBeast from './compenents/SelectedBeast';
-
+//filter with num of horns
+//DataArray that filter all obj
+//on click woll call a fun that filter mydata array that have my beats with num of array
+//then i want to render array
 class App extends React.Component {
     constructor(props) {
         super(props);
