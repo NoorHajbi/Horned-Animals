@@ -5,6 +5,7 @@ import Main from './compenents/Main';
 import Footer from './compenents/Footer';
 import hornsData from './compenents/hornsData.json'
 import SelectedBeast from './compenents/SelectedBeast';
+import HornsForm from './compenents/HornsForm';
 
 //filter with num of horns
 //DataArray that filter all obj
@@ -20,7 +21,7 @@ class App extends React.Component {
         this.state = {
             arrayData: hornsData, //i will try manipulate this
             show: false,
-            modalCard:{},
+            modalCard: {},
         }
     }
     onHide = () => {
@@ -29,17 +30,21 @@ class App extends React.Component {
         });
     }
     displayModal = (data) => {
-            this.setState({show: true,});
-            this.state.modalCard = data;
+        this.setState({ show: true, });
+        this.state.modalCard = data;
     }
     render() {
+        console.log(this.state.arrayData);
         return (
             <>
                 <Header />
                 <Main
                     beastArr={this.state.arrayData} displayModal={this.displayModal}
                 />
+                <HornsForm />
+
                 <SelectedBeast show={this.state.show} onHide={this.onHide} modalCard={this.state.modalCard} />
+
                 <Footer />
             </>
         )

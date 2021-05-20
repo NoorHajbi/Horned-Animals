@@ -10,10 +10,11 @@ class Main extends React.Component {
           };
     }
 
-    render() {
+    render() { console.log(this.state.beastArray);
         return ( //for the render itself
             <>
                 {
+
                      this.state.beastArray.map(item => {
                         return ( //for the map
                             <HornedBeast
@@ -21,9 +22,10 @@ class Main extends React.Component {
                                 img_url={item.image_url}
                                 description={item.description}
                                 displayModal={this.props.displayModal}
+                                
                             />
                         )
-                    })
+                     })
                     // hornsData.map(item => {
                     //     return ( //for the map
                     //         <HornedBeast
@@ -41,7 +43,6 @@ class Main extends React.Component {
 }
 
 export default Main;
-
 
 // <HornedBeast
 // title={'UniWhal'}
