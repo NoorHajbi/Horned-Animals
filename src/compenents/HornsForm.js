@@ -7,7 +7,6 @@ class HornsForm extends React.Component {
         super(props);
         this.state = {
             hornsNum: 'All',
-            arrayForm: this.props.beastArray,
             //maybe i will create a new data variable that takes beast for all and move it to main
             // name:'',
         }
@@ -15,13 +14,14 @@ class HornsForm extends React.Component {
     handleSubmit = (e) => { //for enter submit
         e.preventDefault();
         if (this.state.hornsNum != 'All') {
-          let filteredArr = this.props.arrayForm.filter(value => {
-            return value.horns;
+          let filteredArr = this.props.beastArray.filter(value => {
+            if (value.horns == this.state.hornsNum)
+            return  value;
           });
-          this.setState(filteredArr);
-        }
-        else { this.setState(this.state.arrayForm); //will check to return all
-         }
+        //   this.props.setState(filteredArr)
+        }else
+        this.props.beastArray; //will check to return all
+        
         // this.setState({
         //     show: true
         // })
