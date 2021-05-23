@@ -7,40 +7,29 @@ class HornsForm extends React.Component {
         super(props);
         this.state = {
             hornsNum: 'All',
+            // beastFiltered: this.props.beastArray,
+
             //maybe i will create a new data variable that takes beast for all and move it to main
-            // name:'',
         }
     }
     handleSubmit = (e) => { //for enter submit
         e.preventDefault();
+        let filteredArr =[];
         if (this.state.hornsNum != 'All') {
-          let filteredArr = this.props.beastArray.filter(value => {
+           filteredArr = this.props.beastArray.filter(value => {
             if (value.horns == this.state.hornsNum)
             return  value;
           });
-        //   this.props.setState(filteredArr)
         }else
-        this.props.beastArray; //will check to return all
+        filteredArr= this.props.beastArray; //will check to return all
         
         // this.setState({
-        //     show: true
+        //     beastFiltered:filteredArr,
         // })
-        // console.log(this.state.name)
+        this.props.updateArrayData(filteredArr)
     }
-    // handleChange = (e) => {
-    //     this.setState({
-    //         name:e.target.value
-    //     })
-    // }
-    // updateAge = event => this.setState({age:event.target.value});
-    // updateLikeCats = event => this.setState({likeCats:event.target.checked});
     updatehornsNum = event => this.setState({ hornsNum: event.target.value }); //arrow fun to change component b y this
 
-    // handleClose = () =>{
-    //     this.setState({
-    //         show:false
-    //     })
-    // }
     render() {
         return (
             <>
@@ -58,6 +47,7 @@ class HornsForm extends React.Component {
                 </Form>
                 <Main
                     hornsNum={this.state.hornsNum}
+                    
                 />
             </>
         )
