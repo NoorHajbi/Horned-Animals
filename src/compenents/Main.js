@@ -2,30 +2,48 @@ import React from 'react';
 import HornedBeast from './HornedBeast'
 import hornsData from './hornsData.json'
 import AppFile from '../App'
+import HornsForm from './HornsForm';
 class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            beastArray: this.props.beastArr
-          };
+            filteredArr: []
+        };
+    }
+    updateForm = (hornsNum) => {
+        let filteredArr = []
+        if (hornsNum != 'All') {
+            filteredArr = this.props.beastArray.filter(value => {
+                if (value.horns == hornsNum)
+                    return value;
+            });
+        } else
+            filteredArr = this.props.beastArray; //will check to return all
+        this.props.updateArrayData(filteredArr)
     }
 
-    render() { console.log(this.state.beastArray);
+    render() {
+        console.log(this.props.hornsData);
         return ( //for the render itself
             <>
-                {
+                <HornsForm
+                    updateForm={this.updateForm}
 
-                     this.state.beastArray.map(item => {
+                />
+                {
+                    this.props.hornsData.map(item => {
                         return ( //for the map
                             <HornedBeast
                                 title={item.title}
                                 img_url={item.image_url}
                                 description={item.description}
                                 displayModal={this.props.displayModal}
-                                
+
                             />
                         )
-                     })
+                    })
+
+
                     // hornsData.map(item => {
                     //     return ( //for the map
                     //         <HornedBeast

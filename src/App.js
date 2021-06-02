@@ -42,13 +42,14 @@ class App extends React.Component {
         return (
             <>
                 <Header />
-                <HornsForm
-                 beastArray={this.state.arrayData} updateArrayData={this.updateArrayData}
-                />
+              
                 <Main
-                    beastArr={this.state.arrayData} displayModal={this.displayModal}
-                    updateArrayData={this.updateArrayData}
+                updateArrayData={this.updateArrayData}
+                    // beastArray={hornsData} 
+                     beastArr={this.state.arrayData} 
+                     displayModal={this.displayModal}
                 />
+               
                 <SelectedBeast
                  show={this.state.show} onHide={this.onHide} modalCard={this.state.modalCard} 
                  />
