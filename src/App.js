@@ -12,7 +12,7 @@ class App extends React.Component {
         this.state = {
             arrayData: hornsData,
             show: false,
-            modalCard:{},
+            modalCard: {},
         }
     }
     onHide = () => {
@@ -21,15 +21,18 @@ class App extends React.Component {
         });
     }
     displayModal = (data) => {
-            this.setState({show: true,});
-            this.state.modalCard = data;
+        this.setState({ show: true, modalCard : data});
     }
+    // updateArrayData = (value) => {
+    //     this.setState({ arrayData: value })
+    // }
     render() {
         return (
             <>
                 <Header />
                 <Main
                     beastArr={this.state.arrayData} displayModal={this.displayModal}
+                        // updateArrayData={this.updateArrayData}
                 />
                 <SelectedBeast show={this.state.show} onHide={this.onHide} modalCard={this.state.modalCard} />
                 <Footer />
