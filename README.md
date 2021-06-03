@@ -4,15 +4,15 @@
 - ***Navigator:** Ibraheem Abu Gharbieh*.
 - ***Diver:** Noor Hajbi.*
 
-### Feature #1: Display a Modal
+### lab04 sort the horn animals
 
 - Estimate of time needed to complete: __4 hours__
 
-- Start time: __1:30 PM__
+- Start time: __2:00 PM__
 
-- Finish time: __5:00 PM__
+- Finish time: __no finished__
 
-- Actual time needed to complete: __3.5 hours__
+- Actual time needed to complete: __8 hours__
 
 ---
 
