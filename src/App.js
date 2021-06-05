@@ -5,6 +5,8 @@ import Footer from './compenents/Footer';
 import hornsData from './compenents/hornsData.json'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SelectedBeast from './compenents/SelectedBeast';
+import HornsForm from './compenents/HornsForm';
+
 
 class App extends React.Component {
     constructor(props) {
@@ -13,6 +15,7 @@ class App extends React.Component {
             arrayData: hornsData,
             show: false,
             modalCard: {},
+            filteredArr: hornsData
         }
     }
     onHide = () => {
@@ -21,23 +24,37 @@ class App extends React.Component {
         });
     }
     displayModal = (data) => {
-        this.setState({ show: true, modalCard : data});
+        this.setState({
+            show: true,
+            modalCard: data
+        });
     }
-    // updateArrayData = (value) => {
-    //     this.setState({ arrayData: value })
-    // }
+
+    updateArrayData = (value) => {
+        this.setState({ filteredArr: value })
+    }
     render() {
         return (
             <>
                 <Header />
-                <Main
-                    beastArr={this.state.arrayData} displayModal={this.displayModal}
-                        // updateArrayData={this.updateArrayData}
+                <HornsForm
+                    updateArrayData={this.updateArrayData}
+                    beastArr={this.state.arrayData}
+
                 />
-                <SelectedBeast show={this.state.show} onHide={this.onHide} modalCard={this.state.modalCard} />
+                <Main
+                    beastArr={this.state.filteredArr}
+                    displayModal={this.displayModal}
+
+                />
+                <SelectedBeast
+                    show={this.state.show}
+                    onHide={this.onHide}
+                    modalCard={this.state.modalCard} />
                 <Footer />
             </>
         )
     }
 }
 export default App;
+

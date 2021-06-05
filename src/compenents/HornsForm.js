@@ -1,30 +1,35 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap/';
-import Main from './Main';
 
 class HornsForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            hornsNum: 'All',
-            beastFiltered: this.props.beastArray,
-        }
+
+    updateForm = (e) => {
+        let filteredArr = []
+        if (e != 'All') {
+            filteredArr = this.props.beastArr.filter(value => {
+                if (value.horns == e)
+                    return value
+            })
+        } else
+            filteredArr = this.props.beastArr; //will check to return all
+        console.log('FilterArr', filteredArr)
+        this.props.updateArrayData(filteredArr)
     }
 
-    handleSubmit = (e) => { //for enter submit
-        // e.preventDefault();
-        this.props.updateForm(this.state.hornsNum)
-
+    updateHornsNum = event => {
+        // event.preventDefault();
+        let hornsNum = event.target.value;
+        this.updateForm(hornsNum)
     }
-    updatehornsNum = event => this.setState({ hornsNum: event.target.value }); //arrow fun to change component b y this
+    //arrow fun to change component b y this
 
     render() {
         return (
             <>
-                <Form onSubmit={this.handleSubmit}>
+                <Form >
                     <Form.Group controlId="exampleForm.SelectCustomHtmlSize">
                         <Form.Label>Select the number of horns</Form.Label>
-                        <Form.Control as="select" custom name='hornsNum' onChange={this.updateFavLang}>
+                        <Form.Control as="select" custom name='hornsNum' onChange={this.updateHornsNum}>
                             <option value='All'>All</option>
                             <option value='1 '>1</option>
                             <option value='2'>2</option>
@@ -33,10 +38,6 @@ class HornsForm extends React.Component {
                         </Form.Control>
                     </Form.Group>
                 </Form>
-                <Main
-                    hornsNum={this.state.hornsNum}
-
-                />
             </>
         )
     }
