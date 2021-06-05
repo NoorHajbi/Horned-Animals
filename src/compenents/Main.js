@@ -1,39 +1,42 @@
 import React from 'react';
+import { CardColumns } from 'react-bootstrap';
 import HornedBeast from './HornedBeast'
-import hornsData from './hornsData.json'
-import AppFile from '../App'
+
+
 class Main extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            beastArray: this.props.beastArr
-          };
-    }
+
 
     render() {
         return ( //for the render itself
             <>
-                {
-                     this.state.beastArray.map(item => {
-                        return ( //for the map
-                            <HornedBeast
-                                title={item.title}
-                                img_url={item.image_url}
-                                description={item.description}
-                                displayModal={this.props.displayModal}
-                            />
-                        )
-                    })
-                    // hornsData.map(item => {
-                    //     return ( //for the map
-                    //         <HornedBeast
-                    //             title={item.title}
-                    //             img_url={item.image_url}
-                    //             description={item.description}
-                    //         />
-                    //     )
-                    // })
-                }
+
+                <CardColumns>
+
+                    {console.log(this.props.beastArr)}
+                    {
+                        this.props.beastArr.map(item => {
+                            return ( //for the map
+                                <HornedBeast
+                                    title={item.title}
+                                    img_url={item.image_url}
+                                    description={item.description}
+                                    displayModal={this.props.displayModal}
+                                />
+                            )
+                        })
+
+                        // hornsData.map(item => {
+                        //     return ( //for the map
+                        //         <HornedBeast
+                        //             title={item.title}
+                        //             img_url={item.image_url}
+                        //             description={item.description}
+                        //         />
+                        //     )
+                        // })
+                    }
+                </CardColumns>
+
             </>
         )
     }
